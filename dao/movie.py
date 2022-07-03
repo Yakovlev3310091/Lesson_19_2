@@ -1,4 +1,4 @@
-from dao.model.movie import Movie
+from lesson19_project_hard_source.dao.model.movie import Movie
 
 
 class MovieDAO:

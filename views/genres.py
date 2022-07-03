@@ -1,7 +1,7 @@
 from flask_restx import Resource, Namespace
 
-from dao.model.genre import GenreSchema
-from implemented import genre_service
+from lesson19_project_hard_source.dao.model.genre import GenreSchema
+from lesson19_project_hard_source.implemented import genre_service
 
 genre_ns = Namespace('genres')
 
