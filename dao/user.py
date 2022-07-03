@@ -10,6 +10,9 @@ class UserDAO:
     def get_all(self):
         return self.session.query(User).all()
 
+    def get_by_username(self, username):
+        return self.session.query(User).filter(User.username == username).one()
+
     def create(self, user_data):
         ent = User(**user_data)
         self.session.add(ent)
