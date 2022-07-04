@@ -1,4 +1,13 @@
-from flask import request, abort
+"""
+POST /auth получает логин и пароль из Body запроса в виде JSON, далее проверяет соответствие с данными в БД,
+(наличие пользователя, соответствие пароля) и если все сходится генерит пару access_token, refresh_token
+и отдает их в виде JSON.
+
+PUT /auth получает refresh_token из Body запроса в виде JSON, затем проверяет refresh_token и если у него
+не истек срок годности и он валиден - генерит новую пару access_token, refresh_token и отдает их в виде JSON.
+"""
+
+from flask import request
 from flask_restx import Namespace, Resource
 from lesson19_project_hard_source.implemented import auth_service
 

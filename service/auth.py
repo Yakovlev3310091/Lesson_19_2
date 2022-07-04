@@ -1,11 +1,10 @@
 import calendar
 import datetime
-
-from  lesson19_project_hard_source.constants import JWT_ALG, JWT_SECRET
-
 import jwt
 
-from  lesson19_project_hard_source.service.user import UserService
+from lesson19_project_hard_source.constants import JWT_ALG, JWT_SECRET
+from lesson19_project_hard_source.service.user import UserService
+
 
 class AuthService:
     def __init__(self, user_service: UserService):
@@ -31,9 +30,9 @@ class AuthService:
         data['exp'] = calendar.timegm(min30.timetuple())
         access_token = jwt.encode(data, JWT_SECRET, algorithm=JWT_ALG)
 
-        #refresh_token на 30 дней
-        day30 = datetime.datetime.utcnow() + datetime.timedelta(days=30)
-        data['exp'] = calendar.timegm(day30.timetuple())
+        #refresh_token на 130 дней
+        day130 = datetime.datetime.utcnow() + datetime.timedelta(days=130)
+        data['exp'] = calendar.timegm(day130.timetuple())
         refresh_token = jwt.encode(data, JWT_SECRET, algorithm=JWT_ALG)
 
         return {"access_token": access_token, "refresh_token": refresh_token}
@@ -44,6 +43,12 @@ class AuthService:
         user = self.user_service.get_by_username(username)
 
         if not user:
+            return False
+
+        now = calendar.timegm(datetime.datetime.utcnow().timetuple())
+        expired = data['exp']
+
+        if now > expired:
             return False
 
         return self.generate_tokens(username, user.password, is_refresh=True)

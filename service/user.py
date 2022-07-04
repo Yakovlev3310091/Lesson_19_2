@@ -34,7 +34,4 @@ class UserService:
                PWD_HASH_SALT, PWD_HASH_ITERATIONS))
 
     def compare_passwords(self, password, password_hash):
-        string_hash_1 = password_hash
-        string_hash_2 = self.get_password_hash(password)
-        print(string_hash_1, string_hash_2)
         return hmac.compare_digest(base64.b64decode(password_hash), base64.b64decode(self.get_password_hash(password)))

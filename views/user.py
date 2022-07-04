@@ -3,6 +3,7 @@ from flask_restx import Resource, Namespace
 
 from lesson19_project_hard_source.dao.model.user import UserSchema
 from lesson19_project_hard_source.implemented import user_service
+from lesson19_project_hard_source.service.decorators import admin_requered
 
 user_ns = Namespace('users')
 
@@ -14,10 +15,11 @@ class UsersView(Resource):
         res = UserSchema(many=True).dump(rs)
         return res, 200
 
+    @admin_requered
     def post(self):
         req_json = request.json
         user = user_service.create(req_json)
-        return "", 201, {"location": f"movies/{user.id}"}
+        return "", 201, {"location": f"/movies/{user.id}"}
 
 
 @user_ns.route('/<int:uid>')
@@ -26,6 +28,7 @@ class UserView(Resource):
         r = user_service.get_one(uid)
         sm_d = UserSchema().dump(r)
         return sm_d, 200
+
 
     def put(self, uid):
         req_json = request.json
