@@ -2,13 +2,13 @@ from flask import Flask
 from flask_restx import Api
 
 from config import Config
-from lesson19_project_hard_source.dao.model.user import User
-from lesson19_project_hard_source.views.auth import auth_ns
-from lesson19_project_hard_source.views.user import user_ns
-from lesson19_project_hard_source.setup_db import db
-from lesson19_project_hard_source.views.directors import director_ns
-from lesson19_project_hard_source.views.genres import genre_ns
-from lesson19_project_hard_source.views.movies import movie_ns
+from dao.model.user import User
+from views.auth import auth_ns
+from views.user import user_ns
+from setup_db import db
+from views.directors import director_ns
+from views.genres import genre_ns
+from views.movies import movie_ns
 
 
 def create_app(config_object):

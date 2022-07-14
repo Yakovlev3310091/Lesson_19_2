@@ -1,4 +1,4 @@
-from lesson19_project_hard_source.dao.movie import MovieDAO
+from dao.movie import MovieDAO
 
 
 class MovieService:

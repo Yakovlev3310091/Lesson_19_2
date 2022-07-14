@@ -1,6 +1,6 @@
 from marshmallow import Schema, fields
 
-from lesson19_project_hard_source.setup_db import db
+from setup_db import db
 
 class User(db.Model):
     __tablename__ = 'user'

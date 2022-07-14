@@ -1,13 +1,13 @@
-from lesson19_project_hard_source.dao.director import DirectorDAO
-from lesson19_project_hard_source.dao.genre import GenreDAO
-from lesson19_project_hard_source.dao.movie import MovieDAO
-from lesson19_project_hard_source.dao.user import UserDAO
-from lesson19_project_hard_source.service.auth import AuthService
-from lesson19_project_hard_source.service.director import DirectorService
-from lesson19_project_hard_source.service.genre import GenreService
-from lesson19_project_hard_source.service.movie import MovieService
-from lesson19_project_hard_source.service.user import UserService
-from lesson19_project_hard_source.setup_db import db
+from dao.director import DirectorDAO
+from dao.genre import GenreDAO
+from dao.movie import MovieDAO
+from dao.user import UserDAO
+from service.auth import AuthService
+from service.director import DirectorService
+from service.genre import GenreService
+from service.movie import MovieService
+from service.user import UserService
+from setup_db import db
 
 director_dao = DirectorDAO(session=db.session)
 genre_dao = GenreDAO(session=db.session)

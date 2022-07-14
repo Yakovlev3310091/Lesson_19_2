@@ -1,9 +1,9 @@
 from flask import request
 from flask_restx import Resource, Namespace
 
-from lesson19_project_hard_source.dao.model.movie import MovieSchema
-from lesson19_project_hard_source.implemented import movie_service
-from lesson19_project_hard_source.service.decorators import *
+from dao.model.movie import MovieSchema
+from implemented import movie_service
+from service.decorators import *
 
 movie_ns = Namespace('movies')
 

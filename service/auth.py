@@ -2,8 +2,8 @@ import calendar
 import datetime
 import jwt
 
-from lesson19_project_hard_source.constants import JWT_ALG, JWT_SECRET
-from lesson19_project_hard_source.service.user import UserService
+from constants import JWT_ALG, JWT_SECRET
+from service.user import UserService
 
 
 class AuthService:

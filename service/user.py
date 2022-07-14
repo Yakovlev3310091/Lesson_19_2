@@ -2,8 +2,8 @@ import base64
 import hashlib
 import hmac
 
-from lesson19_project_hard_source.dao.user import UserDAO
-from lesson19_project_hard_source.constants import PWD_HASH_SALT, PWD_HASH_ITERATIONS
+from dao.user import UserDAO
+from constants import PWD_HASH_SALT, PWD_HASH_ITERATIONS
 
 class UserService:
     def __init__(self, dao: UserDAO):

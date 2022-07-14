@@ -9,7 +9,7 @@ PUT /auth получает refresh_token из Body запроса в виде JS
 
 from flask import request
 from flask_restx import Namespace, Resource
-from lesson19_project_hard_source.implemented import auth_service
+from implemented import auth_service
 
 auth_ns = Namespace('auth')
 

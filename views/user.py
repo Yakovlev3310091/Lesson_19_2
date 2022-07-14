@@ -1,9 +1,9 @@
 from flask import request
 from flask_restx import Resource, Namespace
 
-from lesson19_project_hard_source.dao.model.user import UserSchema
-from lesson19_project_hard_source.implemented import user_service
-from lesson19_project_hard_source.service.decorators import admin_requered
+from dao.model.user import UserSchema
+from implemented import user_service
+from service.decorators import admin_requered
 
 user_ns = Namespace('users')
 
